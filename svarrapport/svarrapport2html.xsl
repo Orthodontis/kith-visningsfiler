@@ -2,6 +2,7 @@
 <!--
 
 Endringslogg
+- 17.12.25: v5.3.4 - Reintroduser ServProvId i DokumentInformasjon
 - 03.06.25: v5.3.3 - Inkluder visning av <TextCode> som "Formål" under Begrunnelser og RekvisisjonsId under DokumentInformasjon
 - 29.05.24: v5.3.2 - Inkluder kommentarer under <Investigation> i sammendrag
 - 17.10.23: v5.3.1 - Endret SNOMED til NORPAT
@@ -62,7 +63,7 @@ Om:
 	<xsl:output method="html" encoding="UTF-8" indent="yes" omit-xml-declaration="yes" />
 
 	<!-- Variabel for hvilken versjon av visningsfilen -->
-	<xsl:variable name="versjon" select="'svar v.uavhengig - v5.3.3'"/>
+	<xsl:variable name="versjon" select="'svar v.uavhengig - v5.3.4'"/>
 
 	<!-- Variabler for antall kolonner og bredde -->
 	<xsl:variable name="std-col" select="10"/>
@@ -1126,12 +1127,12 @@ Om:
 							</div>
 						</div>
 					</xsl:if>
-					<!-- <div class="eh-col-1">
-						<div class="eh-label">Avsenders id</div>
+					 <div class="eh-col-1">
+						<div class="eh-label">Svarrapport-id</div>
 						<div class="eh-field">
 							<xsl:value-of select="child::*[local-name()='ServProvId']"/>
 						</div>
-					</div> -->
+					</div> 
 					<div class="eh-col-1">
 						<div class="eh-label">Meldingsid</div>
 						<div class="eh-field">
@@ -1139,7 +1140,7 @@ Om:
 						</div>
 					</div>
 					<div class="eh-col-1">
-						<div class="eh-label">Rekvisisjonsid</div>
+						<div class="eh-label">Rekvisisjons-id</div>
 						<div class="eh-field">
 							<xsl:value-of select="../child::*[local-name()='ServReport']/child::*[local-name()='ServReq']/child::*[local-name()='Id']"/>
 						</div>
